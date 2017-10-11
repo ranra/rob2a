@@ -32,68 +32,42 @@
 	}
 */
 
-void Turn()
-{
-		if(vexRT[Ch1] >= 15)
-	{
-		while(vexRT[Ch1] >= 15)
-			{
-		motor[leftMotor] = vexRT[Ch1]/0.5;
-		motor[rightMotor] = (vexRT[Ch1]/-1) /0.5;
-			}
-	}
-
-	///turn right
-	if(vexRT[Ch1] <= -15)
-	{
-		while(vexRT[Ch1]<= -15)
-			{
-		motor[leftMotor] = (vexRT[Ch1]/-1)/0.5;
-		motor[rightMotor] = vexRT[Ch1]/0.5;
-	    }
-  }
+void Turn(){
+		while(vexRT[Ch1] >= 15){
+			motor[leftMotor] = vexRT[Ch1]/0.5;
+			motor[rightMotor] = (vexRT[Ch1]/-1) /0.5;
+		}
+		while(vexRT[Ch1]<= -15){
+			motor[leftMotor] = (vexRT[Ch1]/-1)/0.5;
+			motor[rightMotor] = vexRT[Ch1]/0.5;
+	  }
 }
 
-
-
-void Drive ()
-{
-		motor[leftMotor] = vexRT[Ch3];
-		motor[rightMotor] = vexRT[Ch3];
-
-
+void Drive (){
+	motor[leftMotor] = vexRT[Ch3];
+	motor[rightMotor] = vexRT[Ch3];
 }
-
 
 void Claw(){
-if(vexRT[Btn5U] == 1)
- {
- motor[clawMotor] = 40;
- }
-else if(vexRT[Btn5D] == 1)
- {
- motor[clawMotor] = -40;
- }
- else
- {
- motor[clawMotor] = 0;
- }
- }
+	if(vexRT[Btn5U] == 1){
+	 	motor[clawMotor] = 40;
+	}
+	else if(vexRT[Btn5D] == 1){
+	 	motor[clawMotor] = -40;
+	}
+	else{
+	 motor[clawMotor] = 0;
+	}
+}
 
-
- void Arm(){
-if(vexRT[Btn6U] == 1)
- {
- motor[armMotor] = 10;
- }
- else if(vexRT[Btn6D] == 1)
- {
- motor[armMotor] = -40;
- }
- else
- {
- motor[armMotor] = 0;
- }
-
-
+void Arm(){
+	if(vexRT[Btn6U] == 1){
+	 motor[armMotor] = 10;
+	}
+	else if(vexRT[Btn6D] == 1){
+	 motor[armMotor] = -40;
+	}
+	else{
+	 motor[armMotor] = 0;
+	}
 }
