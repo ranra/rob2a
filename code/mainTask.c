@@ -1,6 +1,6 @@
-#pragma config(Sensor, in1,    rightLineFollower, sensorNone)
-#pragma config(Sensor, in2,    centerLineFollower, sensorNone)
-#pragma config(Sensor, in3,    leftLineFollower, sensorNone)
+#pragma config(Sensor, in1,    rightLineFollower, sensorLineFollower)
+#pragma config(Sensor, in2,    centerLineFollower, sensorLineFollower)
+#pragma config(Sensor, in3,    leftLineFollower, sensorLineFollower)
 #pragma config(Sensor, in6,    lightSensor,    sensorReflection)
 #pragma config(Sensor, dgtl1,  rightEncoder,   sensorQuadEncoder)
 #pragma config(Sensor, dgtl3,  leftEncoder,    sensorQuadEncoder)
@@ -18,7 +18,8 @@
 #include "verkefni2.c"
 #include "verkefni3.c"
 #include "verkefni4.c"
-
+#include "verkefni5.c"
+#include "verkefni6.c"
 //go_distance();
 	//	Drive();
 		//Turn();
@@ -26,14 +27,19 @@
 		//Claw();
 
 task main()
-{	StartTask(drive_around);
+{	StartTask(follow_line);
 
 	while( vexRT[Btn8D] == 0)
 	{//test();
 		}
 StopAllTasks();
+/*while (True){
+Drive();
+Turn();
+Arm();
+Claw();
+}*/
 
 
 
-
-	}
+}

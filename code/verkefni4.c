@@ -1,7 +1,7 @@
 #include"functions.c";
 #include"verkefni3.c"
 
-task drive_around(){
+task drive_around{
 	while(True){
 			while(SensorValue(lightSensor) < 200){
 					while(SensorValue(sonarFront) > 80 || SensorValue(sonarFront) == -1){
@@ -12,5 +12,3 @@ task drive_around(){
 			}
 	}
 }
-
-

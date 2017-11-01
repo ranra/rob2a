@@ -38,8 +38,8 @@ void Turn(){
 			motor[rightMotor] = (vexRT[Ch1]/-1) /0.5;
 		}
 		while(vexRT[Ch1]<= -15){
-			motor[leftMotor] = (vexRT[Ch1]/-1)/0.5;
-			motor[rightMotor] = vexRT[Ch1]/0.5;
+			motor[leftMotor] = (vexRT[Ch1])/0.5;
+			motor[rightMotor] = (vexRT[Ch1]/-1)/0.5;
 	  }
 }
 
@@ -50,10 +50,12 @@ void Drive (){
 
 void Claw(){
 	if(vexRT[Btn5U] == 1){
-	 	motor[clawMotor] = 40;
+	 	motor[clawMotor] = 90;
+	 	wait1Msec(500)
 	}
 	else if(vexRT[Btn5D] == 1){
-	 	motor[clawMotor] = -40;
+	 	motor[clawMotor] = -70;
+	 	wait1Msec(100)
 	}
 	else{
 	 motor[clawMotor] = 0;

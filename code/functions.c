@@ -46,3 +46,46 @@ void auto_turn(int turn_degrees, int turn_direction = 1){
 	}
 	reset_motors();
 }
+
+
+void open_close_claw(int state){
+
+//open
+	if (state == 1)
+		{
+	 	motor[clawMotor] = 90;
+	 	wait1Msec(500)
+	}
+ //close
+	else
+		{
+	 	motor[clawMotor] = -70;
+	 	wait1Msec(100)
+	}
+}
+
+
+void line_follow()
+{
+   if(SensorValue(rightLineFollower) > threshold)
+    {
+
+      motor[leftMotor]  = 80;
+      motor[rightMotor] = 30;
+    }
+
+    if(SensorValue(centerLineFollower) > threshold)
+    {
+
+      motor[leftMotor]  = 63;
+      motor[rightMotor] = 63;
+    }
+
+    if(SensorValue(leftLineFollower) > threshold)
+    {
+
+      motor[leftMotor]  = 30;
+      motor[rightMotor] = 80;
+    }
+
+}
