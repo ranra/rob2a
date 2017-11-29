@@ -1,7 +1,6 @@
-#include "functions.c"
-#include "values.h";
 
-task drive_distance(){
+
+task drive_distance{
 		int direction ;
 		int distance = halfmeter;
 
@@ -10,10 +9,10 @@ task drive_distance(){
     	wait1Msec(1000);
 
     	if(i % 2 != 0 ){
-    		direction = -1;
+    		direction = 1;
     	}
 			else{
-				direction = 1;
+				direction = -1;
 				if (i != 0){
 					distance += halfmeter	+100;
 				}
@@ -23,7 +22,7 @@ task drive_distance(){
 }
 
 
-task drive_and_turn(){
+task drive_and_turn{
 	int direction = 1;
 	int distance = halfmeter;
 	for(int i = 0; i < 4; i++){
@@ -33,10 +32,10 @@ task drive_and_turn(){
     	drive_straight(direction,distance);
 
     	if (i == 0){
-    		auto_turn(380, 1)
+    		auto_turn(380, -1)
 			}
 			else if( i < 3){
-				auto_turn(390, -1)
+				auto_turn(390, 1)
 			}
 	}
 }
